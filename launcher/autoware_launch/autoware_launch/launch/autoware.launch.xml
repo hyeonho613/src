@@ -13,7 +13,7 @@
 
   <!-- Optional parameters -->
   <!-- Modules to be launched -->
-  <arg name="launch_vehicle" default="true" description="launch vehicle"/>
+  <arg name="launch_vehicle" default="false" description="launch vehicle"/>
   <arg name="launch_system" default="true" description="launch system"/>
   <arg name="launch_map" default="true" description="launch map"/>
   <arg name="launch_sensing" default="true" description="launch sensing"/>
