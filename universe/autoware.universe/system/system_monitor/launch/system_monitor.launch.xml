@@ -16,9 +16,11 @@
       <composable_node pkg="system_monitor" plugin="MemMonitor" name="mem_monitor">
         <param from="$(var mem_monitor_config_file)"/>
       </composable_node>
-      <composable_node pkg="system_monitor" plugin="NetMonitor" name="net_monitor">
+      <!--HJK_240508 Commit[Cart v1.0, f4d8f9d] {-->
+      <!-- <composable_node pkg="system_monitor" plugin="NetMonitor" name="net_monitor">
         <param from="$(var net_monitor_config_file)"/>
-      </composable_node>
+      </composable_node> -->
+      <!--HJK_240508 Commit[Cart v1.0, f4d8f9d] }-->
       <composable_node pkg="system_monitor" plugin="NTPMonitor" name="ntp_monitor">
         <param from="$(var ntp_monitor_config_file)"/>
       </composable_node>

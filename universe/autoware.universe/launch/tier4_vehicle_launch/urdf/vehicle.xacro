@@ -8,6 +8,8 @@
   <xacro:include filename="$(find ${vehicle_model_property}_description)/urdf/vehicle.xacro"/>
 
   <!-- sensors -->
-  <xacro:property name="sensor_model_property" value="$(arg sensor_model)"/>
-  <xacro:include filename="$(find ${sensor_model_property}_description)/urdf/sensors.xacro"/>
+  <!--HJK Commit[Cart v1.0, f4d8f9d] {-->
+  <!-- <xacro:property name="sensor_model_property" value="$(arg sensor_model)"/>
+  <xacro:include filename="$(find ${sensor_model_property}_description)/urdf/sensors.xacro"/> -->
+  <!--HJK Commit[Cart v1.0, f4d8f9d] }-->
 </robot>

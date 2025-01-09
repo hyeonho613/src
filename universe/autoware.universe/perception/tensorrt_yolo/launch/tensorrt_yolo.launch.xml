@@ -1,5 +1,5 @@
 <launch>
-  <arg name="yolo_type" default="yolov3"/>
+  <arg name="yolo_type" default="yolov5x"/>
   <arg name="label_file" default="coco.names"/>
   <arg name="input_topic" default="/image_raw"/>
   <arg name="output_topic" default="rois"/>
@@ -14,7 +14,7 @@
     <remap from="out/image" to="$(var output_topic)/debug/image"/>
     <param name="onnx_file" type="str" value="$(var data_path)/tensorrt_yolo/$(var yolo_type).onnx"/>
     <param name="engine_file" type="str" value="$(var engine_file)"/>
-    <param name="label_file" type="str" value="$(var data_path)/tensorrt_yolo/$(var label_file)"/>
+    <param name="label_file" type="str" value="$(var data_path)/tensorrt_yolo/coco.names"/>
     <param name="calib_image_directory" type="str" value="$(var calib_image_directory)"/>
     <param name="calib_cache_file" type="str" value="$(var data_path)/tensorrt_yolo/$(var yolo_type).cache"/>
     <param name="mode" type="str" value="$(var mode)"/>

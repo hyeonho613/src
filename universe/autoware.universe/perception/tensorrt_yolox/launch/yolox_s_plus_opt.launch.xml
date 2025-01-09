@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
   <!-- cspell:ignore finetune -->
-  <arg name="input/image" default="/sensing/camera/camera0/image_rect_color"/>
+  <arg name="input/image" default="/image_raw"/> <!-- KMS_241231, /sensing/camera/camera0/image_rect_color -->
   <arg name="output/objects" default="/perception/object_recognition/detection/rois0"/>
   <arg name="model_name" default="yolox-sPlus-T4-960x960-pseudo-finetune"/>
   <arg name="data_path" default="$(env HOME)/autoware_data" description="packages data and artifacts directory path"/>

@@ -37,7 +37,9 @@
   </include>
 
   <!-- Velodyne Monitor -->
-  <include file="$(find-pkg-share velodyne_monitor)/launch/velodyne_monitor.launch.xml" if="$(var launch_driver)">
+  <!--HJK Commit[Cart v1.0, f4d8f9d] {-->
+  <!-- <include file="$(find-pkg-share velodyne_monitor)/launch/velodyne_monitor.launch.xml" if="$(var launch_driver)">
     <arg name="ip_address" value="$(var sensor_ip)"/>
-  </include>
+  </include> -->
+  <!--HJK Commit[Cart v1.0, f4d8f9d] }-->
 </launch>
