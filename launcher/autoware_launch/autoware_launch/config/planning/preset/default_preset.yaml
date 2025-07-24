@@ -58,7 +58,7 @@ launch:
       default: "true"
   - arg:
       name: launch_virtual_traffic_light_module
-      default: "false"
+      default: "true" #HJK Commit[Cart v1.0, f4d8f9d]
   - arg:
       name: launch_no_stopping_area_module
       default: "true"
@@ -97,7 +97,7 @@ launch:
 
   - arg:
       name: motion_stop_planner_type
-      default: obstacle_stop_planner
+      default: obstacle_cruise_planner #SHY_240606 Commit[Cart v1.0, f4d8f9d]
       # option: obstacle_stop_planner
       #         obstacle_cruise_planner
       #         none

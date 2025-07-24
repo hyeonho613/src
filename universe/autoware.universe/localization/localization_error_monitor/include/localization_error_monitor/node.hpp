@@ -22,6 +22,7 @@
 #include <diagnostic_msgs/msg/diagnostic_array.hpp>
 #include <nav_msgs/msg/odometry.hpp>
 #include <visualization_msgs/msg/marker_array.hpp>
+#include <std_msgs/msg/float32_multi_array.hpp> //HJK_240619
 
 #include <memory>
 
@@ -40,11 +41,13 @@ private:
   rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr odom_sub_;
   rclcpp::Publisher<visualization_msgs::msg::Marker>::SharedPtr ellipse_marker_pub_;
   rclcpp::Publisher<diagnostic_msgs::msg::DiagnosticArray>::SharedPtr diag_pub_;
+  rclcpp::Publisher<std_msgs::msg::Float32MultiArray>::SharedPtr localization_accuracy_pub_; //HJK_240619
 
   rclcpp::TimerBase::SharedPtr timer_;
 
   std::unique_ptr<tier4_autoware_utils::LoggerLevelConfigure> logger_configure_;
 
+  std_msgs::msg::Float32MultiArray localization_msg; //HJK_240619
   double scale_;
   double error_ellipse_size_;
   double warn_ellipse_size_;

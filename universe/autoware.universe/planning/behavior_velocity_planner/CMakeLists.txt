@@ -3,7 +3,6 @@ project(behavior_velocity_planner)
 
 find_package(autoware_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
-find_package(grid_map_core REQUIRED) #KMS_250406
 
 rosidl_generate_interfaces(
   ${PROJECT_NAME}
@@ -24,15 +23,6 @@ rclcpp_components_register_node(${PROJECT_NAME}_lib
   EXECUTABLE ${PROJECT_NAME}_node
 )
 
-# grid_map_core 헤더 디렉토리 명시적으로 추가
-target_include_directories(${PROJECT_NAME}_lib
-  PRIVATE
-  ${grid_map_core_INCLUDE_DIRS}
-  /opt/ros/humble/include/grid_map_core  #KMS_250406 [반드시 grid_map_core가 시작되는 경로를 포함해야 함]
-)
-
-
-
 if(${rosidl_cmake_VERSION} VERSION_LESS 2.5.0)
     rosidl_target_interfaces(${PROJECT_NAME}_lib
     ${PROJECT_NAME} "rosidl_typesupport_cpp")
@@ -50,15 +40,17 @@ if(BUILD_TESTING)
     gtest_main
     ${PROJECT_NAME}_lib
   )
-  target_include_directories(test_${PROJECT_NAME}
-    PRIVATE
-    src
-    /opt/ros/humble/include/grid_map_core  #KMS_250406 테스트 타깃에 grid_map_core 경로 추가
-  )
+  target_include_directories(test_${PROJECT_NAME} PRIVATE src)
 endif()
-
 
 ament_auto_package(INSTALL_TO_SHARE
   launch
   config
 )
+
+find_package(grid_map_core REQUIRED)   #BYH250417 
+
+ament_target_dependencies(${PROJECT_NAME}_lib
+  grid_map_core
+)
+

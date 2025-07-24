@@ -28,7 +28,7 @@
   <arg name="traffic_light_arbiter_param_path"/>
 
   <!-- CenterPoint model parameters -->
-  <arg name="centerpoint_model_name" default="centerpoint_tiny" description="options: `centerpoint` or `centerpoint_tiny`"/>
+  <arg name="centerpoint_model_name" default="centerpoint" description="options: `centerpoint` or `centerpoint_tiny`"/> <!--HJK_241208_D-->
   <arg name="centerpoint_model_path" default="$(var data_path)/lidar_centerpoint"/>
 
   <!-- Common parameters -->
@@ -77,8 +77,8 @@
   <arg name="objects_validation_method" default="obstacle_pointcloud"/>
 
   <!-- Traffic light recognition parameters -->
-  <arg name="use_traffic_light_recognition" default="true"/>
-  <arg name="traffic_light_recognition/enable_fine_detection" default="true"/>
+  <arg name="use_traffic_light_recognition" default="false"/> <!-- SHY Commit[Cart v1.0, f4d8f9d]-->
+  <arg name="traffic_light_recognition/enable_fine_detection" default="false"/> <!-- SHY Commit[Cart v1.0, f4d8f9d]-->
   <arg name="traffic_light_recognition/fusion_only" default="false"/>
   <arg name="traffic_light_image_number" default="1" description="choose traffic light image raw number(1-2)"/>
   <arg
@@ -105,9 +105,9 @@
   <!-- Radar long range integration methods -->
   <arg
     name="use_radar_tracking_fusion"
-    default="true"
+    default="false" 
     description="if use_radar_tracking_fusion:=true, radar information is merged in tracking launch. Otherwise, radar information is merged in detection launch."
-  />
+  /><!--HJK_240508 Commit[Cart v1.0, f4d8f9d]-->
 
   <!-- Perception module -->
   <group>

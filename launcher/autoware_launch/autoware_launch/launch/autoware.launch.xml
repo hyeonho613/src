@@ -14,7 +14,7 @@
   <!-- Optional parameters -->
   <!-- Modules to be launched -->
   <arg name="launch_vehicle" default="true" description="launch vehicle"/>
-  <arg name="launch_system" default="true" description="launch system"/>
+  <arg name="launch_system" default="false" description="launch system"/> <!--HJK_241120 Commit[Cart v1.0, f4d8f9d]-->
   <arg name="launch_map" default="true" description="launch map"/>
   <arg name="launch_sensing" default="true" description="launch sensing"/>
   <arg name="launch_sensing_driver" default="true" description="launch sensing driver"/>
@@ -29,9 +29,28 @@
   <arg name="launch_vehicle_interface" default="true" description="launch vehicle interface"/>
   <!-- Control -->
   <arg name="check_external_emergency_heartbeat" default="false"/>
+  
   <!-- Map -->
-  <arg name="lanelet2_map_file" default="lanelet2_map.osm" description="lanelet2 map file name"/>
-  <arg name="pointcloud_map_file" default="pointcloud_map.pcd" description="pointcloud map file name"/>
+  <!--GGM-->
+  <!-- <arg name="lanelet2_map_file" default="ggm_mgrs_v12.osm" description="lanelet2 map file name"/> -->
+  <!-- <arg name="pointcloud_map_file" default="ggm_modified_mgrs.pcd" description="pointcloud map file name"/>   -->
+  
+  <!--CU-->
+  <arg name="lanelet2_map_file" default="1234.osm" description="lanelet2 map file name"/>
+  <arg name="pointcloud_map_file" default="CSU_KAMO_V4.pcd" description="pointcloud map file name"/>
+
+  <!--Parking-->
+  <!-- <arg name="lanelet2_map_file" default="CSU_KAMO_V9_Add_Parking.osm" description="lanelet2 map file name"/> -->
+  <!-- <arg name="pointcloud_map_file" default="cu_mgrs_v4.pcd" description="pointcloud map file name"/>  -->
+
+  <!--KATECH-->
+  <!-- <arg name="lanelet2_map_file" default="KATECH_lanelet2.osm" description="lanelet2 map file name"/> -->
+  <!-- <arg name="pointcloud_map_file" default="map_moved.pcd" description="pointcloud map file name"/> -->
+
+  <!--CarMaker-->
+  <!-- <arg name="lanelet2_map_file" default="new_lanelet2_maps.osm" description="lanelet2 map file name"/> -->
+  <!-- <arg name="pointcloud_map_file" default="map_hjk.pcd" description="pointcloud map file name"/> -->
+
   <!-- System -->
   <arg name="system_run_mode" default="online" description="run mode in system"/>
   <arg name="launch_system_monitor" default="true" description="launch system monitor"/>
@@ -43,7 +62,7 @@
   <arg name="rviz_respawn" default="true"/>
   <!-- Perception -->
   <arg name="perception_mode" default="lidar" description="select perception mode. camera_lidar_radar_fusion, camera_lidar_fusion, lidar_radar_fusion, lidar, radar"/>
-  <arg name="traffic_light_recognition/enable_fine_detection" default="true" description="enable traffic light fine detection"/>
+  <arg name="traffic_light_recognition/enable_fine_detection" default="false" description="enable traffic light fine detection"/> <!--HJK_240623 Commit[Cart v1.0, f4d8f9d]-->
 
   <!-- Global parameters -->
   <group scoped="false">

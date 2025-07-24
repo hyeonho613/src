@@ -26,8 +26,17 @@
   <!-- Vehicle -->
   <arg name="launch_vehicle_interface" default="false"/>
   <!-- Map -->
-  <arg name="lanelet2_map_file" default="lanelet2_map.osm" description="lanelet2 map file name"/>
-  <arg name="pointcloud_map_file" default="pointcloud_map.pcd" description="pointcloud map file name"/>
+  <!-- <arg name="lanelet2_map_file" default="cu_lanelet_v16_lane-change.osm" description="lanelet2 map file name"/> -->
+  <!-- <arg name="pointcloud_map_file" default="cu_modified_mgrs_v2.pcd" description="pointcloud map file name"/> -->
+
+  <arg name="lanelet2_map_file" default="parking_pid.osm" description="lanelet2 map file name"/>
+  <arg name="pointcloud_map_file" default="cu_mgrs_v4.pcd" description="pointcloud map file name"/>
+
+
+  <!--KATECH-->
+  <!-- <arg name="lanelet2_map_file" default="KATECH_lanelet2.osm" description="lanelet2 map file name"/> -->
+  <!-- <arg name="pointcloud_map_file" default="KATECH_MGRS.pcd" description="pointcloud map file name"/> -->
+  
   <!-- System -->
   <arg name="launch_system_monitor" default="false" description="launch system monitor"/>
   <arg name="launch_dummy_diag_publisher" default="false" description="launch dummy diag publisher"/>
@@ -35,6 +44,21 @@
   <arg name="rviz" default="true" description="launch rviz"/>
   <!-- Scenario simulation -->
   <arg name="scenario_simulation" default="false" description="use scenario simulation"/>
+
+  <node pkg="tf2_ros" exec="static_transform_publisher" name="base_link_to_ouster"
+    args="0.63 0.0 1.735 0.0 0.0 0.0 base_link os_sensor"/>
+
+  <node pkg="tf2_ros" exec="static_transform_publisher" name="base_link_to_gnss"
+    args="0.38 0.0 1.695 0.0 0.0 0.0 base_link gnss_link"/>
+
+  <node pkg="tf2_ros" exec="static_transform_publisher" name="base_link_to_imu_adma"
+    args="0.45 0.0 0.45 0.0 0.0 0.0 base_link imu_link"/> 
+
+  <node pkg="tf2_ros" exec="static_transform_publisher" name="os_sensor_to_os_lidar"
+      args="0.0 0.0 0.036180000000000004 0.0 0.0 1.0 0.0 os_sensor os_lidar"/> 
+
+  <node pkg="tf2_ros" exec="static_transform_publisher" name="os_sensor_to_os_imu"
+    args="0.006253 -0.011775 0.007645 0.0 0.0 0.0 1.0 os_sensor os_imu"/>
 
   <group scoped="false">
     <include file="$(find-pkg-share autoware_launch)/launch/autoware.launch.xml">

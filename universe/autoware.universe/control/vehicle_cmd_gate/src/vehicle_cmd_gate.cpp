@@ -61,7 +61,7 @@ VehicleCmdGate::VehicleCmdGate(const rclcpp::NodeOptions & node_options)
   // Publisher
   vehicle_cmd_emergency_pub_ =
     create_publisher<VehicleEmergencyStamped>("output/vehicle_cmd_emergency", durable_qos);
-  control_cmd_pub_ = create_publisher<AckermannControlCommand>("output/control_cmd", durable_qos);
+  control_cmd_pub_ = create_publisher<AckermannControlCommand>("/control/command/control_cmd", durable_qos);
   gear_cmd_pub_ = create_publisher<GearCommand>("output/gear_cmd", durable_qos);
   turn_indicator_cmd_pub_ =
     create_publisher<TurnIndicatorsCommand>("output/turn_indicators_cmd", durable_qos);

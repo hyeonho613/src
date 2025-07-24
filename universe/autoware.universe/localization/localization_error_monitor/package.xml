@@ -22,7 +22,6 @@
   <depend>tf2_geometry_msgs</depend>
   <depend>tier4_autoware_utils</depend>
   <depend>visualization_msgs</depend>
-  <depend>autoware_localization_msgs</depend> <!--KMS_250317-->
 
   <test_depend>ament_cmake_ros</test_depend>
   <test_depend>ament_lint_auto</test_depend>
